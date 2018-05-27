@@ -18,7 +18,7 @@ body {
   margin: 0px;
   background-color: #ABC84A;
   width: 100%;
-  font-family: 'Yeon Sung', cursive;
+  /* font-family: 'Yeon Sung', cursive; */
   font-size: 5rem;
   color: white
 }
@@ -35,6 +35,7 @@ body {
   text-decoration: none;
   font-size: 1.5rem;
   color: white;
+  padding-right: 10rem;
 }
 
 .nav-about-link p {
@@ -43,13 +44,41 @@ body {
   color: white;
 }
 
+.logo {
+  position: relative;
+  top: -5.625rem;
+}
+
 .logo img {
   border-radius: 50%;
   border-width: 0.7rem;
   border-color: white;
   border-style: solid;
   width: 10rem;
-  position: relative;
-
   background-color: #ABC84A;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.triangle-up {
+    width: 25%;
+    height: 0;
+    padding-left:25%;
+    padding-bottom: 25%;
+}
+
+.triangle-up:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    margin-left:-250px;
+    border-left: 250px solid transparent;
+    border-right: 250px solid transparent;
+    border-bottom: 500px solid #ABC84A;
 }
