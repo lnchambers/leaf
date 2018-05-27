@@ -1,0 +1,55 @@
+body {
+  margin: 0px;
+  background-color: white;
+  font-family: 'Yeon Sung', cursive;
+  font-family: 'Comfortaa', cursive;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+  background-color: #ABC84A;
+  width: 100%;
+  font-family: 'Yeon Sung', cursive;
+  font-size: 5rem;
+  color: white
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  margin: 0px;
+  background-color: #ABC84A;
+  width: 100%;
+}
+
+.nav-login-link p {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.nav-about-link p {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.logo img {
+  border-radius: 50%;
+  border-width: 0.7rem;
+  border-color: white;
+  border-style: solid;
+  width: 10rem;
+  position: relative;
+
+  background-color: #ABC84A;
+}
