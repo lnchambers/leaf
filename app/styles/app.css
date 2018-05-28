@@ -16,11 +16,17 @@ body {
   justify-content: center;
   align-items: center;
   margin: 0px;
+  padding: 18px 0;
   background-color: #ABC84A;
   width: 100%;
   /* font-family: 'Yeon Sung', cursive; */
   font-size: 5rem;
   color: white
+}
+
+.image-upload {
+  position: relative;
+  bottom: 50px;
 }
 
 .nav {
