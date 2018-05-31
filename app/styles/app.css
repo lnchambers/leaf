@@ -39,14 +39,14 @@ body {
   box-shadow: 0px 5px 8px #aaa, inset 0px 0px 0px #fff;
 }
 
-.nav-login-link a {
+.nav-login-link p {
   text-decoration: none;
   font-size: 1.5rem;
   color: white;
   padding-right: 10rem;
 }
 
-.nav-about-link a {
+.nav-about-link p {
   text-decoration: none;
   font-size: 1.5rem;
   color: white;
