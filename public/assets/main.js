@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-  console.log( "ready!" );
+  console.log( "Execute order 66" );
   $('.nav-login-link').click( () => {
     // Pull down the header and display the login form
   });
