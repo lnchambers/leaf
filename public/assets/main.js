@@ -21,8 +21,7 @@ function enterLoginNinja() {
     $('.content').animate({opacity: 0}, 500)
     $('.header').animate({height: "69vh"}, 750, () => {
       $('.header').addClass('fill')
-      $('.logo').empty()
-      $('.logo').append('<img src="https://i.imgur.com/Yo4kvcL.png" />')
+      $('.logo').html('<img src="https://i.imgur.com/Yo4kvcL.png" />')
       $('.main').addClass('main-position')
       $('.about').removeClass('show')
       $('.logo').addClass('logo-login-position')
@@ -41,8 +40,7 @@ function enterAboutNinja() {
     $('.content').animate({opacity: 0}, 500)
     $('.header').animate({height: "69vh"}, 750, () =>{
       $('.header').addClass('fill')
-      $('.logo').empty()
-      $('.logo').append('<img src="https://i.imgur.com/Yo4kvcL.png" />')
+      $('.logo').html('<img src="https://i.imgur.com/Yo4kvcL.png" />')
       $('.main').addClass('main-position')
       $('.login-form').removeClass('show')
       $('.logo').addClass('logo-about-position')
@@ -55,8 +53,7 @@ function exitNinja() {
   $('.header').animate({height: "14vh"}, 750, () => {
     $('.content').animate({opacity: 1}, 300)
     $('.header').removeClass('fill')
-    $('.logo').empty()
-    $('.logo').append('<img src="https://i.imgur.com/8ex0RmM.png" />')
+    $('.logo').html('<img src="https://i.imgur.com/8ex0RmM.png" />')
     $('.main').removeClass('main-position')
     $('.logo').removeClass('logo-about-position')
     $('.logo').removeClass('logo-login-position')
