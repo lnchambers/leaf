@@ -18,14 +18,16 @@ function enterLoginNinja() {
     $('.header').addClass('fill')
     $('.logo').empty()
     $('.logo').append('<img src="https://i.imgur.com/Yo4kvcL.png" />')
+    $('.logo').addClass('logo-about-position')
     $('.content').addClass('hide')
+    $('.main').addClass('main-position')
   };
   if ( $('.about').hasClass('show') ) {
     $('.about').removeClass('show')
   };
-  if ( $('.login-form:not(.show)') ) {
-    $('.login-form').addClass('show')
-  };
+  $('.logo').removeClass('logo-about-position')
+  $('.logo').addClass('logo-login-position')
+  $('.login-form').addClass('show login-position')
 };
 
 function enterAboutNinja() {
@@ -33,14 +35,16 @@ function enterAboutNinja() {
     $('.header').addClass('fill')
     $('.logo').empty()
     $('.logo').append('<img src="https://i.imgur.com/Yo4kvcL.png" />')
+    $('.logo').addClass('logo-about-position')
     $('.content').addClass('hide')
+    $('.main').addClass('main-position')
   };
   if ( $('.login-form').hasClass('show') ) {
     $('.login-form').removeClass('show')
   };
-  if ( $('.about:not(.show)') ) {
-    $('.about').addClass('show')
-  };
+  $('.logo').removeClass('logo-login-position')
+  $('.logo').addClass('logo-about-position')
+  $('.about').addClass('show about-position')
 };
 
 function exitNinja() {
@@ -56,4 +60,7 @@ function exitNinja() {
   $('.logo').empty()
   $('.logo').append('<img src="https://i.imgur.com/8ex0RmM.png" />')
   $('.content').removeClass('hide')
+  $('.logo').removeClass('logo-about-position')
+  $('.logo').removeClass('logo-login-position')
+  $('.main').removeClass('main-position')
 }

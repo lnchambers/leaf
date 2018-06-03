@@ -40,6 +40,16 @@ body {
   border: 2px solid black;
   width: 75%;
   height: 11vh;
+  background-image: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/3xEGOGX/spring-green-leaves-growing-floral-background-floral-background-green-plant-growing-on-white-spring-abstract-illustration-animation-30fps-hd1080-seamless-loop_nye_9g1q__F0002.png");
+  background-size: 100%;
+}
+
+.content:hover {
+  cursor: pointer;
+}
+
+.content:active {
+  box-shadow: 0px 5px 8px #aaa, inset 0px 0px 0px #fff;
 }
 
 .nav {
@@ -62,9 +72,17 @@ body {
   z-index: 6;
 }
 
+.nav-login-link:hover {
+  cursor: pointer;
+}
+
 .fill {
   height: 69vh;
   -webkit-animation: fill;
+}
+
+.nav-about-link:hover {
+  cursor: pointer;
 }
 
 .nav-about-link p {
@@ -88,6 +106,14 @@ body {
   width: 10rem;
   background-color: #ABC84A;
   box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
+}
+
+.logo-about-position:hover {
+  cursor: pointer;
+}
+
+.logo-login-position:hover {
+  cursor: pointer;
 }
 
 .main {
@@ -124,6 +150,7 @@ body {
   top: -43rem;
   display: none;
   z-index: 7;
+  width: 20rem;
 }
 
 .login-form {
@@ -160,13 +187,14 @@ body {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
-  color: #76833E;
+  color: white;
   -webkit-box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(000,000,000,0.7) 0 1px 1px;
   -moz-box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(000,000,000,0.7) 0 1px 1px;
   box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(000,000,000,0.7) 0 1px 1px;
-  padding:8px;
-  margin-bottom:20px;
-  width:280px;
+  padding: 8px;
+  margin-bottom: 20px;
+  width: 280px;
+  font-size: 16px;
 }
 
 .form-field:focus {
@@ -176,21 +204,21 @@ body {
 
 .form-container h2 {
   text-shadow: white 0 1px 0;
-  font-size:18px;
+  font-size: 18px;
   margin: 0 0 10px 0;
   font-weight:bold;
   text-align:center;
 }
 
 .form-title {
-  margin-bottom:10px;
+  margin-bottom: 10px;
   color: white;
   text-shadow: #fdf2e4 0 1px 0;
 }
 
 .submit-container {
-  margin:8px 0;
-  text-align:right;
+  margin: 8px 0;
+  text-align: right;
 }
 
 .submit-button {
@@ -245,6 +273,26 @@ body {
 .show {
   display: block;
   text-align: center;
+}
+
+.about-position {
+  top: -32rem;
+}
+
+.login-position {
+  top: -30rem;
+}
+
+.main-position {
+  height: 0;
+}
+
+.logo-login-position {
+  top: 10.15rem;
+}
+
+.logo-about-position {
+  top: 9.55rem;
 }
 
 .hide {
