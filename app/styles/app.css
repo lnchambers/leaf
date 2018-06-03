@@ -76,11 +76,6 @@ body {
   cursor: pointer;
 }
 
-.fill {
-  height: 69vh;
-  -webkit-animation: fill;
-}
-
 .nav-about-link:hover {
   cursor: pointer;
 }
@@ -222,6 +217,9 @@ body {
 }
 
 .submit-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: 1px solid #447314;
   background: #76833E;
   background: -webkit-gradient(linear, left top, left bottom, from(#ABC84A), to(#76833E));
@@ -238,10 +236,9 @@ body {
   box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
   text-shadow: #addc7e 0 1px 0;
   color: #fff;
-  padding: 8.5px 18px;
   font-size: 14px;
-  text-decoration: none;
-  vertical-align: middle;
+  width: 4rem;
+  height: 2.5rem;
 }
 
 .submit-button:hover {
@@ -288,18 +285,13 @@ body {
 }
 
 .logo-login-position {
-  top: 10.15rem;
+  top: 11.65rem;
 }
 
 .logo-about-position {
-  top: 9.55rem;
+  top: 9.75rem;
 }
 
 .hide {
   display: none;
-}
-
-@-webkit-keyframes fill {
-  from {height: 14vh;}
-  to {height: 69vh;}
 }
