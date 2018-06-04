@@ -5,6 +5,7 @@ $( document ).ready(function() {
   $('.nav-about-link').on('click', enterAboutNinja);
   $('.logo').on('click', exitNinja);
   $('.content').on('click', takePictureNinja);
+  $('.content').on('click', getPictureResultsNinja);
   $('.submit-button').on('click', loginNinja);
   $('.triangle-up').click( () => {
     // Pull up the triangle to show information on plants
@@ -59,5 +60,33 @@ function exitNinja() {
     $('.logo').removeClass('logo-login-position')
     $('.about').removeClass('show')
     $('.login-form').removeClass('show')
-  })
-}
+  });
+};
+
+function takePictureNinja() {
+
+};
+
+function getPictureResultsNinja() {
+  fetch(`https://bauth.blippar.com/token?grant_type=client_credentials&client_id=${client_id}&client_secret=${client_secret}`)
+    .then((response) => {
+      return response.json();
+    })
+    .then((json) => {
+      let accessToken = json.access_token
+      let tokenType = json.token_type
+
+      return fetch("https://bapi.blippar.com/v1/imageLookup", {
+        method: "POST",
+        body: JSON.stringify({input_image: "kawaii.jpg"}),
+        header: {
+          "Content-Type": "multipart/form-data; boundary=leafom",
+          "Authorization": tokenType + " " + accessToken
+        },
+        mode: 'no-cors'
+      })
+    })
+    .then((response) => {
+      console.log(response.body)
+    })
+};
