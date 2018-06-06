@@ -112,6 +112,7 @@ function getShowPlantNinja() {
   triangleUp()
   $('.shown').animate({opacity: 1}, 500)
   $('.shown').addClass('front')
+  let taxId = "4p9gjzad"
   let proxy = 'https://cors-anywhere.herokuapp.com/';
   let url = `https://intense-thicket-27380.herokuapp.com/plants/${this.id}`;
   fetch(proxy + url)
@@ -122,10 +123,21 @@ function getShowPlantNinja() {
       $('.shown').html(
         `<section class="content-card">
           <section class="content-card-img" id=${json.id}>
-            <img src="${json.img}.jpg" />
-          </section>
-        </section>`
+            <img src="${json.img}.jpg" />`
       );
+    })
+    .then(() => {
+      return fetch(`https://api.oakparks.org/v1/taxa/${taxId}/props`)
+    })
+    .then((response) => {
+      return response.json()
+    })
+    .then((json) => {
+      $('.shown').append('Plants with these leaves are typically found in ')
+      json.data[13].attributes.value.forEach((state) => {
+        $('.shown').append(`${state}, `)
+      })
+      $('.shown').append('.')
     })
 };
 
@@ -136,6 +148,7 @@ function triangleUp() {
 
 function triangleDown() {
   $('.shown').empty()
+  $('.shown').removeClass('front')
   $('.content').removeClass('hide')
   $('.content').animate({opacity: 1}, 300)
   $('.close').addClass('hide')
