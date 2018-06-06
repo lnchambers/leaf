@@ -4,15 +4,33 @@ $( document ).ready(function() {
   $('.nav-login-link').on('click', enterLoginNinja);
   $('.nav-about-link').on('click', enterAboutNinja);
   $('.logo').on('click', exitNinja);
-  $('.content').on('click', takePictureNinja);
-  $('.content').on('click', getPictureResultsNinja);
+  $('.close').on('click', triangleDown)
+  let proxy = 'https://cors-anywhere.herokuapp.com/';
+  let url = 'https://intense-thicket-27380.herokuapp.com/plants';
+  fetch(proxy + url)
+    .then((response) => {
+      $('.content').empty()
+      return response.json()
+    })
+    .then((json) => {
+      json.forEach((plant) => {
+        $('.content').append(
+          `<section class="content-card">
+            <section class="content-card-img" id=${plant.id}>
+              <img src="${plant.img}.jpg" />
+            </section>
+          </section>`
+        );
+        $(`#${plant.id}`).on('click', getShowPlantNinja)
+      })
+    });
   $('.submit-button').on('click', loginNinja);
-  $('.triangle-up').click( () => {
-    // Pull up the triangle to show information on plants
-  });
 });
 
 function enterLoginNinja() {
+  if ( $('.nav-login-link').hasClass('logout')) {
+    return logoutNinja();
+  };
   if ( $('.header').hasClass('fill') ) {
     $('.logo').removeClass('logo-about-position')
     $('.logo').addClass('logo-login-position')
@@ -63,30 +81,63 @@ function exitNinja() {
   });
 };
 
-function takePictureNinja() {
-
-};
-
-function getPictureResultsNinja() {
-  fetch(`https://bauth.blippar.com/token?grant_type=client_credentials&client_id=${client_id}&client_secret=${client_secret}`)
+function loginNinja() {
+  let username = "O"
+  let proxy = 'https://cors-anywhere.herokuapp.com/';
+  let url = `https://intense-thicket-27380.herokuapp.com/users?username=${username}`;
+  fetch(proxy + url)
     .then((response) => {
-      return response.json();
+      return response.json()
     })
     .then((json) => {
-      let accessToken = json.access_token
-      let tokenType = json.token_type
+      alert(`Welcome, ${json[0].name}`)
+      $('.nav-login-link').html("<p>Logout</p>")
+      $('.nav-login-link').addClass('logout')
+      $('.form-field').empty()
+      exitNinja()
+    });
+};
 
-      return fetch("https://bapi.blippar.com/v1/imageLookup", {
-        method: "POST",
-        body: JSON.stringify({input_image: "kawaii.jpg"}),
-        header: {
-          "Content-Type": "multipart/form-data; boundary=leafom",
-          "Authorization": tokenType + " " + accessToken
-        },
-        mode: 'no-cors'
-      })
-    })
+function logoutNinja() {
+  alert("You have logged out")
+  $('.nav-login-link').html("<p>Login</p>")
+  $('.nav-login-link').removeClass('logout')
+  exitNinja()
+};
+
+function getShowPlantNinja() {
+  console.log(this)
+  $('.content').animate({opacity: 0}, 300)
+  $('.content').addClass('hide')
+  triangleUp()
+  $('.shown').animate({opacity: 1}, 500)
+  $('.shown').addClass('front')
+  let proxy = 'https://cors-anywhere.herokuapp.com/';
+  let url = `https://intense-thicket-27380.herokuapp.com/plants/${this.id}`;
+  fetch(proxy + url)
     .then((response) => {
-      console.log(response.body)
+      return response.json()
     })
+    .then((json) => {
+      $('.shown').html(
+        `<section class="content-card">
+          <section class="content-card-img" id=${json.id}>
+            <img src="${json.img}.jpg" />
+          </section>
+        </section>`
+      );
+    })
+};
+
+function triangleUp() {
+  $('.close').removeClass('hide')
+  $('.triangle-up').addClass('slip-up')
+};
+
+function triangleDown() {
+  $('.shown').empty()
+  $('.content').removeClass('hide')
+  $('.content').animate({opacity: 1}, 300)
+  $('.close').addClass('hide')
+  $('.triangle-up').removeClass('slip-up')
 };

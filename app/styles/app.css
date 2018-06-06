@@ -1,6 +1,6 @@
 body {
   margin: 0px;
-  background-color: white;
+  background-color: #E6EEF0;
   font-family: 'Comfortaa', cursive;
 }
 
@@ -33,23 +33,17 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  position: relative;
-  bottom: 2rem;
-  padding: 1rem;
-  border: 2px solid black;
-  width: 75%;
-  height: 11vh;
-  background-image: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/3xEGOGX/spring-green-leaves-growing-floral-background-floral-background-green-plant-growing-on-white-spring-abstract-illustration-animation-30fps-hd1080-seamless-loop_nye_9g1q__F0002.png");
-  background-size: 100%;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 18.5rem;
+  overflow: scroll;
+  height: 35.5vh;
+  width: 95%;
 }
 
-.content:hover {
-  cursor: pointer;
-}
-
-.content:active {
-  box-shadow: 5px 5px 20px #aaa, inset 0px 0px 0px #fff;
+.content img {
+  width: 10rem;
+  height: 10rem;
 }
 
 .nav {
@@ -121,9 +115,6 @@ body {
 .triangle-up {
   width: 100%;
   height: 0;
-}
-
-.triangle-up:after {
   position: absolute;
   bottom: 0px;
   content: "";
@@ -135,6 +126,22 @@ body {
   border-left: 50vw solid transparent;
   border-right: 50vw solid transparent;
   border-bottom: 25vh solid #ABC84A;
+}
+
+.slip-up {
+  width: 100%;
+  height: 0;
+  position: absolute;
+  bottom: 0px;
+  content: "";
+  display: block;
+  filter: drop-shadow(2px 2px 6px #aaa);
+  -webkit-filter: drop-shadow(2px 2px 6px #aaa);
+  width: 0;
+  height: 0;
+  border-left: 50vw solid transparent;
+  border-right: 50vw solid transparent;
+  border-bottom: 110vh solid #ABC84A;
 }
 
 .about {
@@ -202,12 +209,12 @@ body {
   font-size: 18px;
   margin: 0 0 10px 0;
   font-weight:bold;
-  text-align:center;
 }
 
 .form-title {
   margin-bottom: 10px;
   color: white;
+  font-family: "Comfortaa";
   text-shadow: #fdf2e4 0 1px 0;
 }
 
@@ -285,13 +292,61 @@ body {
 }
 
 .logo-login-position {
-  top: 11.65rem;
+  top: 10.75rem;
 }
 
 .logo-about-position {
-  top: 9.75rem;
+  top: 8.84rem;
 }
 
 .hide {
   display: none;
+}
+
+.content-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 5px;
+}
+
+.content-card:hover {
+  cursor: pointer;
+}
+
+.content-card:active {
+  box-shadow: 5px 5px 20px #aaa, inset 0px 0px 0px #fff;
+}
+
+.content-card-img img {
+  width: 10rem;
+  height: 11vh;
+}
+
+.shown {
+  opacity: 0;
+  z-index: -1;
+  position: relative;
+}
+
+.shown img {
+  width: 10rem;
+  height: 11vh
+}
+
+.front {
+  z-index: 10;
+}
+
+.close {
+  color: white;
+  font-size: 200%;
+  z-index: 1;
+  position: absolute;
+  font-family: 'Yeon Sung', cursive;
+}
+
+.close:hover {
+  cursor: pointer;
 }
