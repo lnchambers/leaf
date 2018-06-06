@@ -1,7 +1,6 @@
 body {
   margin: 0px;
-  background-color: white;
-  font-family: 'Yeon Sung', cursive;
+  background-color: #E6EEF0;
   font-family: 'Comfortaa', cursive;
 }
 
@@ -14,7 +13,7 @@ body {
 .header {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   margin: 0px;
   padding: 10px 0;
   background-color: #ABC84A;
@@ -22,21 +21,41 @@ body {
   font-family: 'Yeon Sung', cursive;
   font-size: 5rem;
   color: white;
+  z-index: 5;
+  height: 14vh;
 }
 
-.image-upload {
-  position: relative;
-  bottom: 3.125rem;
-  padding: 1rem;
+.header p {
+  margin: 0;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 18.5rem;
+  overflow: scroll;
+  height: 35.5vh;
+  width: 95%;
+}
+
+.content img {
+  width: 10rem;
+  height: 10rem;
 }
 
 .nav {
   display: flex;
   justify-content: space-around;
+  overflow: hidden;
+  height: 80px;
   margin: 0px;
   background-color: #ABC84A;
   width: 100%;
   box-shadow: 0px 5px 8px #aaa, inset 0px 0px 0px #fff;
+  z-index: 5
 }
 
 .nav-login-link p {
@@ -44,17 +63,28 @@ body {
   font-size: 1.5rem;
   color: white;
   padding-right: 10rem;
+  z-index: 6;
+}
+
+.nav-login-link:hover {
+  cursor: pointer;
+}
+
+.nav-about-link:hover {
+  cursor: pointer;
 }
 
 .nav-about-link p {
   text-decoration: none;
   font-size: 1.5rem;
   color: white;
+  z-index: 6
 }
 
 .logo {
   position: relative;
   top: -5.625rem;
+  z-index: 6
 }
 
 .logo img {
@@ -67,6 +97,14 @@ body {
   box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
 }
 
+.logo-about-position:hover {
+  cursor: pointer;
+}
+
+.logo-login-position:hover {
+  cursor: pointer;
+}
+
 .main {
   display: flex;
   flex-direction: column;
@@ -77,17 +115,247 @@ body {
 .triangle-up {
   width: 100%;
   height: 0;
-}
-
-.triangle-up:after {
   position: absolute;
   bottom: 0px;
   content: "";
   display: block;
   filter: drop-shadow(2px 2px 6px #aaa);
+  -webkit-filter: drop-shadow(2px 2px 6px #aaa);
   width: 0;
   height: 0;
   border-left: 50vw solid transparent;
   border-right: 50vw solid transparent;
   border-bottom: 25vh solid #ABC84A;
+}
+
+.slip-up {
+  width: 100%;
+  height: 0;
+  position: absolute;
+  bottom: 0px;
+  content: "";
+  display: block;
+  filter: drop-shadow(2px 2px 6px #aaa);
+  -webkit-filter: drop-shadow(2px 2px 6px #aaa);
+  width: 0;
+  height: 0;
+  border-left: 50vw solid transparent;
+  border-right: 50vw solid transparent;
+  border-bottom: 110vh solid #ABC84A;
+}
+
+.about {
+  background-color: #ABC84A;
+  color: white;
+  font-size: 2rem;
+  position: relative;
+  top: -43rem;
+  display: none;
+  z-index: 7;
+  width: 20rem;
+}
+
+.login-form {
+  border: 1px solid #76833E;
+  background: #76833E;
+  background: -webkit-gradient(linear, left top, left bottom, from(#76833E), to(#ABC84A));
+  background: -webkit-linear-gradient(top, #76833E, #ABC84A);
+  background: -moz-linear-gradient(top, #76833E, #ABC84A);
+  background: -ms-linear-gradient(top, #76833E, #ABC84A);
+  background: -o-linear-gradient(top, #76833E, #ABC84A);
+  background-image: -ms-linear-gradient(top, #76833E 0%, #ABC84A 100%);
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  border-radius: 12px;
+  -webkit-box-shadow: rgba(000,000,000,0.9) 0 1px 2px, inset rgba(255,255,255,0.4) 0 0px 0;
+  -moz-box-shadow: rgba(000,000,000,0.9) 0 1px 2px, inset rgba(255,255,255,0.4) 0 0px 0;
+  box-shadow: rgba(000,000,000,0.9) 0 1px 2px, inset rgba(255,255,255,0.4) 0 0px 0;
+  text-decoration: none;
+  vertical-align: middle;
+  min-width:300px;
+  padding:20px;
+  width:300px;
+  background-color: #ABC84A;
+  color: white;
+  display: none;
+  position: relative;
+  top: -46rem;
+  z-index: 9;
+}
+
+.form-field {
+  border: 1px solid #76833E;
+  background: #ABC84A;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  color: white;
+  -webkit-box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(000,000,000,0.7) 0 1px 1px;
+  -moz-box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(000,000,000,0.7) 0 1px 1px;
+  box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(000,000,000,0.7) 0 1px 1px;
+  padding: 8px;
+  margin-bottom: 20px;
+  width: 280px;
+  font-size: 16px;
+}
+
+.form-field:focus {
+  background: #fff;
+  color: black;
+}
+
+.form-container h2 {
+  text-shadow: white 0 1px 0;
+  font-size: 18px;
+  margin: 0 0 10px 0;
+  font-weight:bold;
+}
+
+.form-title {
+  margin-bottom: 10px;
+  color: white;
+  font-family: "Comfortaa";
+  text-shadow: #fdf2e4 0 1px 0;
+}
+
+.submit-container {
+  margin: 8px 0;
+  text-align: right;
+}
+
+.submit-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #447314;
+  background: #76833E;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ABC84A), to(#76833E));
+  background: -webkit-linear-gradient(top, #ABC84A, #76833E);
+  background: -moz-linear-gradient(top, #ABC84A, #76833E);
+  background: -ms-linear-gradient(top, #ABC84A, #76833E);
+  background: -o-linear-gradient(top, #ABC84A, #76833E);
+  background-image: -ms-linear-gradient(top, #ABC84A 0%, #76833E 100%);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+  -moz-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+  box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+  text-shadow: #addc7e 0 1px 0;
+  color: #fff;
+  font-size: 14px;
+  width: 4rem;
+  height: 2.5rem;
+}
+
+.submit-button:hover {
+  border: 1px solid #447314;
+  text-shadow: #31540c 0 1px 0;
+  background: #76833E;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ABC84A), to(#76833E));
+  background: -webkit-linear-gradient(top, #ABC84A, #76833E);
+  background: -moz-linear-gradient(top, #ABC84A, #76833E);
+  background: -ms-linear-gradient(top, #ABC84A, #76833E);
+  background: -o-linear-gradient(top, #ABC84A, #76833E);
+  background-image: -ms-linear-gradient(top, #ABC84A 0%, #76833E 100%);
+  color: #fff;
+}
+
+.submit-button:active {
+  text-shadow: #31540c 0 1px 0;
+  border: 1px solid #447314;
+  background: #ABC84A;
+  background: -webkit-gradient(linear, left top, left bottom, from(#76833E), to(#76833E));
+  background: -webkit-linear-gradient(top, #76833E, #ABC84A);
+  background: -moz-linear-gradient(top, #76833E, #ABC84A);
+  background: -ms-linear-gradient(top, #76833E, #ABC84A);
+  background: -o-linear-gradient(top, #76833E, #ABC84A);
+  background-image: -ms-linear-gradient(top, #76833E 0%, #ABC84A 100%);
+  color: #fff;
+}
+
+.show {
+  display: block;
+  text-align: center;
+}
+
+.about-position {
+  top: -32rem;
+}
+
+.login-position {
+  top: -30rem;
+}
+
+.main-position {
+  height: 0;
+}
+
+.logo-login-position {
+  top: 10.75rem;
+}
+
+.logo-about-position {
+  top: 8.84rem;
+}
+
+.hide {
+  display: none;
+}
+
+.content-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 5px;
+}
+
+.content-card:hover {
+  cursor: pointer;
+}
+
+.content-card:active {
+  box-shadow: 5px 5px 20px #aaa, inset 0px 0px 0px #fff;
+}
+
+.content-card-img img {
+  width: 10rem;
+  height: 11vh;
+}
+
+.shown {
+  opacity: 0;
+  z-index: -1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 46%;
+  text-align: center;
+  color: white;
+  height: 49vh;
+  overflow: scroll;
+  top: -10rem;
+}
+
+.shown img {
+  width: 10rem;
+  height: 11vh
+}
+
+.front {
+  z-index: 10;
+}
+
+.close {
+  color: white;
+  font-size: 200%;
+  z-index: 1;
+  position: relative;
+  top: -8rem;
+  font-family: 'Yeon Sung', cursive;
+}
+
+.close:hover {
+  cursor: pointer;
 }

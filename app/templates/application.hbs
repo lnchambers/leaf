@@ -1,6 +1,6 @@
 <section class="hero">
   <header class="header">
-    Leaf
+    <p>Leaf</p>
   </header>
   <nav class="nav">
     <div class="nav-login-link">
@@ -13,8 +13,35 @@
 </section>
 <section class="main">
   <div class="logo">
-    <img src="{{rootURL}}assets/images/logo.png" />
+    <img src="https://i.imgur.com/8ex0RmM.png" />
   </div>
-    {{outlet}}
+  <section class="about">
+    <p>
+      Ever wonder what that plant you see is? Leaf allows you to take a picture of a plant to identify what it is.
+    </p>
+  </section>
+  <form class="login-form">
+    <div class="form-title">
+      <h2>Log In</h2>
+    </div>
+    <div class="form-title">Username</div>
+      <input class="form-field" type="text" name="email" /><br />
+    <div class="form-title">Password</div>
+      <input class="form-field" type="password" name="password" /><br />
+    <div class="submit-container">
+      <div class="submit-button">
+        Submit
+      </div>
+    </div>
+  </form>
+  <section class="content">
+    <img src="https://media.giphy.com/media/26tPgy93ssTeTTSqA/giphy.gif" />
+  </section>
   <section class="triangle-up"></section>
+  <div class="close hide">
+    <p>X</p>
+  </div>
+  <section class="shown">
+    <img src="https://media.giphy.com/media/26tPgy93ssTeTTSqA/giphy.gif" />
+  </section>
 </section>
